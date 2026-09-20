@@ -94,10 +94,10 @@ export const ConversationalInput: React.FC<ConversationalInputProps> = ({
       }`}
     >
       <div
-        className={`relative flex items-center bg-white rounded-2xl border transition-all ${
+        className={`relative flex items-center bg-zinc-900/90 rounded-2xl border transition-all ${
           isListening
-            ? 'border-rose-500 ring-4 ring-rose-500/15 shadow-xl shadow-rose-100'
-            : 'border-zinc-200/90 hover:border-zinc-300 focus-within:border-teal-600 focus-within:ring-4 focus-within:ring-teal-600/10 shadow-xl shadow-zinc-200/40'
+            ? 'border-rose-500 ring-2 ring-rose-500/30 shadow-lg shadow-rose-950/40'
+            : 'border-white/10 hover:border-white/20 focus-within:border-teal-500/80 focus-within:ring-2 focus-within:ring-teal-500/20 shadow-lg shadow-black/30'
         } ${isHero ? 'p-2 sm:p-2.5' : 'p-1.5 sm:p-2'}`}
       >
         <input
@@ -114,10 +114,10 @@ export const ConversationalInput: React.FC<ConversationalInputProps> = ({
               ? 'কেয়ারব্রিজকে বলুন কী সমস্যা হচ্ছে...'
               : language === 'hinglish'
               ? 'Tell CareBridge kya problem hai...'
-              : 'Tell us what’s happening...'
+              : 'Tell us what’s happening or ask a question...'
           }
-          className={`w-full bg-transparent text-zinc-900 placeholder-zinc-400 focus:outline-none px-3.5 sm:px-4 py-2 text-sm sm:text-base font-normal ${
-            isListening ? 'animate-pulse text-rose-600' : ''
+          className={`w-full bg-transparent text-zinc-100 placeholder-zinc-500 focus:outline-none px-3.5 sm:px-4 py-2 text-sm sm:text-base font-normal ${
+            isListening ? 'animate-pulse text-rose-300' : ''
           }`}
           disabled={isProcessing}
         />
@@ -130,8 +130,8 @@ export const ConversationalInput: React.FC<ConversationalInputProps> = ({
             onClick={isListening ? handleStopListening : handleStartListening}
             className={`p-2 sm:p-2.5 rounded-xl transition-all cursor-pointer ${
               isListening
-                ? 'bg-rose-600 text-white shadow-md shadow-rose-200 scale-105'
-                : 'hover:bg-zinc-100 text-zinc-500 hover:text-zinc-800'
+                ? 'bg-rose-600 text-white shadow-md shadow-rose-950/50 scale-105'
+                : 'hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200'
             }`}
             title={isListening ? 'Stop listening' : 'Speak with microphone'}
             aria-label="Voice input"
@@ -149,8 +149,8 @@ export const ConversationalInput: React.FC<ConversationalInputProps> = ({
             disabled={!text.trim() || isProcessing}
             className={`p-2 sm:p-2.5 rounded-xl transition-all cursor-pointer ${
               text.trim() && !isProcessing
-                ? 'bg-zinc-900 hover:bg-teal-700 text-white shadow-sm'
-                : 'bg-zinc-100 text-zinc-300 cursor-not-allowed'
+                ? 'bg-zinc-100 hover:bg-white text-zinc-950 shadow-sm'
+                : 'bg-zinc-800/60 text-zinc-600 cursor-not-allowed'
             }`}
             aria-label="Send message"
           >
