@@ -114,7 +114,7 @@ export const ConversationalInput: React.FC<ConversationalInputProps> = ({
               ? 'কেয়ারব্রিজকে বলুন কী সমস্যা হচ্ছে...'
               : language === 'hinglish'
               ? 'Tell CareBridge kya problem hai...'
-              : 'Tell us what’s happening or ask a question...'
+              : 'Tell us what’s happening...'
           }
           className={`w-full bg-transparent text-zinc-100 placeholder-zinc-500 focus:outline-none px-3.5 sm:px-4 py-2 text-sm sm:text-base font-normal ${
             isListening ? 'animate-pulse text-rose-300' : ''
